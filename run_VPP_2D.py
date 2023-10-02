@@ -34,16 +34,18 @@ ics = {'ycom':ycomic, 'ycomdot':ycomdotic, 'zcom':zcomic, 'zcomdot':zcomdotic,
        'thetaH':thetaHic, 'thetaHdot':thetaHdotic, 'incontact': 0}
 info(ics, "Initial conditions")
 
-VPP = makeVPP2D_Radau(pars, 1e-3)
-# VPP = makeVPP2D_Dopri(pars)
+# VPP = makeVPP2D_Radau(pars, 1e-3)
+VPP = makeVPP2D_Dopri(pars)
 # VPP = makeVPP2D_Vode(pars)
 VPP.set(verboselevel=0)
 
-t_start = time.clock()
+t_start = time.process_time()
 
-print phi, rvh
+# print phi, rvh
+print(phi)
+print(rvh)
 print("Computing trajectory...\n")
-VPP.compute(force=True, trajname='test', tdata=[0,5], ics=ics, verboselevel=0)
+VPP.compute(force=True, trajname='test', tdata=[0,15], ics=ics, verboselevel=0)
 
 # phi = 10.0/180.0*pi
 # r = 0.1
@@ -61,8 +63,9 @@ VPP.compute(force=True, trajname='test', tdata=[0,5], ics=ics, verboselevel=0)
 # print phi, rvh, psi
 # VPP.compute(pars={'phi':phi, 'psi':psi, 'rvh':rvh}, force=True, trajname='test3', tdata=[0,50], ics=ics, verboselevel=1)
 
-t_elapsed = (time.clock() - t_start)
-print t_elapsed
+t_elapsed = (time.process_time() - t_start)
+# print t_elapsed
+print("computation time: ", t_elapsed)
 
 # tmp = VPP.sample('test')
 # tSta = tmp['t'][0]
