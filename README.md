@@ -2,9 +2,7 @@
 Virtural-Pivot-Point (VPP) based control for human-like walking and running gaits
 
 This repository provides a sample code of VPP based control with the TSLIP (spring-loaded-inverted-pendulum with trunk) model. 
-
-
-[https://github.com/gpzhaome/VPP/assets/19933362/dc8346ac-d81c-4b6b-80d3-2a5bf4dca50f](https://youtube.com/shorts/4-5jUnUl6Fg)
+https://youtube.com/shorts/4-5jUnUl6Fg
 
 
 
